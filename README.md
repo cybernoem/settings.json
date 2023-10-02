@@ -4,3 +4,7 @@ Welcome to my adorable VSCode settings repository! Here, you'll find my carefull
 
 ## 🌸 settings.json
 <!-- SETTINGS_JSON -->
+
+```json
+
+```
