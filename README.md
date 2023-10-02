@@ -6,7 +6,7 @@ Welcome to my adorable VSCode settings repository! Here, you'll find my carefull
 <!-- SETTINGS_JSON -->
 
 ```json
-// Version : 2023-10-02
+// Version : 2023-10-02 23:33
 {
   // Color Settings ===============================================================
   "workbench.colorCustomizations": {
