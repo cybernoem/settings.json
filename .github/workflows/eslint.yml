@@ -4,22 +4,46 @@ on:
   push:
     branches:
       - main
+      - 'update/*'
 
 jobs:
-  lint-replace-push:
+  lint:
     runs-on: ubuntu-latest
-
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Set Up Node.js
         uses: actions/setup-node@v2
-        with:
-          node-version: 18
 
       - name: Install Dependencies
         run: npm install
 
       - name: Run NPM Lint
         run: npm run lint
+
+  replace-push:
+    needs: lint
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Replace variable in readme
+      run: |
+        sed -i '/<!-- SETTINGS_JSON -->/q' README.md
+        echo -e "\n\`\`\`json\n// Version : $(date +'%Y-%m-%d')\n$(cat settings.json)\n\`\`\`" >> README.md
+
+
+    - name: Commit and push
+      run: |
+        git config user.name "cybernoem"
+        git config user.email "cybernoem@gmail.com"
+        git add .
+        git commit -m "Automated commit - Add new settings.json value to readme.md"
+        git push
