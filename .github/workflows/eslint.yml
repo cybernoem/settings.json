@@ -29,6 +29,8 @@ jobs:
     needs: lint
     if: ${{ success() }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -36,13 +38,10 @@ jobs:
     - name: Replace variable in readme
       run: sed -i -e '/{{ SETTINGS }}/r settings.json' -e '/{{ SETTINGS }}/d' README.md
 
-    - name: Configure Git
+    - name: Commit and push
       run: |
         git config user.name "cybernoem"
         git config user.email "cybernoem@gmail.com"
-
-    - name: Commit and push
-      run: |
         git add .
         git commit -m "Automated commit - Add new settings.json value to readme.md"
         git push
