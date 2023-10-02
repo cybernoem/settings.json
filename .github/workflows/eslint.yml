@@ -37,7 +37,7 @@ jobs:
     - name: Replace variable in readme
       run: |
         sed -i '/<!-- SETTINGS_JSON -->/q' README.md
-        echo -e "\n\`\`\`json\n// Version : $(date +'%Y-%m-%d')\n$(cat settings.json)\n\`\`\`" >> README.md
+        echo -e "\n\`\`\`json\n// Version : $(date +'%Y-%m-%d %H:%M')\n$(cat settings.json)\n\`\`\`" >> README.md
 
 
     - name: Commit and push
