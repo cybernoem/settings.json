@@ -1,0 +1,29 @@
+{
+  "name": "cybernoem",
+  "version": "0.1.0",
+  "description": "My setting.json that I use for work and personnal dev",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint settings.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybernoem/settings.json.git"
+  },
+  "keywords": [
+    "settings",
+    "vscode",
+    "personal"
+  ],
+  "author": "cybernoem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cybernoem/settings.json/issues"
+  },
+  "homepage": "https://github.com/cybernoem/settings.json#readme",
+  "dependencies": {
+    "eslint": "^8.50.0",
+    "eslint-plugin-jsonc": "^2.9.0"
+  }
+}

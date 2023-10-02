@@ -2,3 +2,6 @@
 !.gitignore
 !settings.json
 !readme.md
+!package.json
+!package-lock.json
+!.eslintrc.js
