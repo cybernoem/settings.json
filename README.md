@@ -6,7 +6,7 @@ Welcome to my adorable VSCode settings repository! Here, you'll find my carefull
 <!-- SETTINGS_JSON -->
 
 ```json
-// Version : 2023-10-02 23:33
+// Version : 2023-10-10 19:54
 {
   // Color Settings ===============================================================
   "workbench.colorCustomizations": {
@@ -59,8 +59,7 @@ Welcome to my adorable VSCode settings repository! Here, you'll find my carefull
   "editor.cursorSurroundingLines": 100,
 
   // Files Settings =================================================================
-  "files.eol": "
-",
+  "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
 
